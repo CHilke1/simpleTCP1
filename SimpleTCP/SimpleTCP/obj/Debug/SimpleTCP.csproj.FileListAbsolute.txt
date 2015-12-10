@@ -1,0 +1,5 @@
+C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\SimpleTCP\bin\Debug\SimpleTCP.dll
+C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\SimpleTCP\bin\Debug\SimpleTCP.pdb
+C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\SimpleTCP\obj\Debug\SimpleTCP.csprojResolveAssemblyReference.cache
+C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\SimpleTCP\obj\Debug\SimpleTCP.dll
+C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\SimpleTCP\obj\Debug\SimpleTCP.pdb

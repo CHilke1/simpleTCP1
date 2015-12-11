@@ -54,7 +54,7 @@ namespace SimpleTCP
         /// <param name="payLoad">Data payload appearing after all the headers</param>
         /// <returns>Returns a byte array representing the entire packet</returns>
 
-        static public ushort ComputeChecksum(byte[] payLoad)
+        public ushort ComputeChecksum(byte[] payLoad)
         {
             uint xsum = 0;
             ushort shortval = 0, hiword = 0, loword = 0;
@@ -81,7 +81,7 @@ namespace SimpleTCP
         /// four such hex digits displayed per line.
         /// </summary>
         /// <param name="printBytes">Byte array to display</param>
-        static public void PrintByteArray(byte[] printBytes)
+        public void PrintByteArray(byte[] printBytes)
         {
             int index = 0;
             while (index < printBytes.Length)

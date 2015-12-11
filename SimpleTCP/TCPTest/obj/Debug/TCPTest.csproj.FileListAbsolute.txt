@@ -6,3 +6,11 @@ C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\TCPTest\bin\Debu
 C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\TCPTest\obj\Debug\TCPTest.csprojResolveAssemblyReference.cache
 C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\TCPTest\obj\Debug\TCPTest.exe
 C:\Users\Chilke\Documents\Visual Studio 2015\Projects\SimpleTCP\TCPTest\obj\Debug\TCPTest.pdb
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\bin\Debug\TCPTest.exe.config
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\obj\Debug\TCPTest.exe
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\obj\Debug\TCPTest.pdb
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\bin\Debug\TCPTest.exe
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\bin\Debug\TCPTest.pdb
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\bin\Debug\SimpleTCP.dll
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\bin\Debug\SimpleTCP.pdb
+C:\Users\Chilke\Documents\GitHub\simpleTCP1\SimpleTCP\TCPTest\obj\Debug\TCPTest.csprojResolveAssemblyReference.cache

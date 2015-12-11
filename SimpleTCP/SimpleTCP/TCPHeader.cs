@@ -14,7 +14,7 @@ using System.IO;
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |          Source Port          |       Destination Port        |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |                        Sequence Number                        |
+   |                        Sequence Number*                       |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |                    Acknowledgment Number                      |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -22,7 +22,7 @@ using System.IO;
    | Offset| Reserved  |R|C|S|S|Y|I|            Window             |
    |       |           |G|K|H|T|N|N|                               |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-   |           Checksum            |         Urgent Pointer        |
+   |           Checksum*           |         Urgent Pointer        |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
    |                    Options                    |    Padding    |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
@@ -62,7 +62,7 @@ Reserved: 6 bits
 
 Control Bits: 6 bits(from left to right):
 
-   URG:  Urgent Pointer field significant
+    URG:  Urgent Pointer field significant
     ACK:  Acknowledgment field significant
     PSH:  Push Function
     RST:  Reset the connection
@@ -117,7 +117,7 @@ Urgent Pointer: 16 bits
 Options: variable
 
     Options may occupy space at the end of the TCP header and are a
-    multiple of 8 bits in length.All options are included in the
+    multiple of 8 bits in length. All options are included in the
     checksum.  An option may begin on any octet boundary.  There are two
     cases for the format of an option:
 
@@ -389,7 +389,7 @@ namespace SimpleTCP
 
     public enum control_digits
     {
-        URG,
+        URG = 01100,
         ACK,
         PSH,
         RST,

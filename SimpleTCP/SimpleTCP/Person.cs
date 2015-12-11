@@ -11,6 +11,7 @@ namespace SimpleTCP
     {
         string _firstName = String.Empty;
         string _lastName = String.Empty;
+        string _fullName = String.Empty;
 
         private Person()
         {
@@ -32,6 +33,12 @@ namespace SimpleTCP
         {
             get { return _firstName; }
             set { _firstName = value; }
+        }
+
+        public override string ToString()
+        {
+            _fullName = _firstName + " " + _lastName;
+            return _fullName;
         }
     }
 }

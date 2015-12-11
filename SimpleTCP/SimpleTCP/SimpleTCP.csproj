@@ -50,6 +50,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="ProtocolHeader.cs" />
     <Compile Include="RawSocketClient.cs" />
+    <Compile Include="Server.cs" />
     <Compile Include="SockaddrConvert.cs" />
     <Compile Include="TCP4Header.cs" />
     <Compile Include="TCPPacket.cs" />

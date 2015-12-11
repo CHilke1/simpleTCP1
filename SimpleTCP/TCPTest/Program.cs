@@ -39,11 +39,13 @@ namespace TCPTest
             byte[] personPacket = packet1.Serialize(p);
             Console.WriteLine(Encoding.Default.GetString(personPacket));
             Console.WriteLine(stringPacket.Length + " bytes");
+            Person p2 = packet1.Deserialize(personPacket);
+            Console.WriteLine(p2.ToString());
 
             // get IP addresses and ports
             IPAddress[] MyAddresses = GetHostNameAndIP();
             string myAddress = MyAddresses[1].ToString();
-            ushort defaultPort = 8080;
+            ushort defaultPort = 51111;
 
             // create asynchronous client
             AsynchronousClient.StartClient(MyAddresses[0], defaultPort, stringPacket);
@@ -52,10 +54,6 @@ namespace TCPTest
             // create raw socket and pass in payloads
             RawSocketClient.SendPacket(myAddress, myAddress, defaultPort, defaultPort, stringPacket);
             RawSocketClient.SendPacket(myAddress, myAddress, defaultPort, defaultPort, personPacket);
-
-            // create asynchronous client
-            AsynchronousClient.StartClient(MyAddresses[0], defaultPort, stringPacket);
-            AsynchronousClient.StartClient(MyAddresses[0], defaultPort, personPacket);
 
             // create TCPHeader object (nonsense)
             TCPHeader t = new TCPHeader(8080, 8080, 1, 1, 0, 1, 512, 0, 0);
@@ -124,8 +122,17 @@ namespace TCPTest
             }
 
             Console.WriteLine("\n Press Enter to continue...");
-            Console.Read();
-        } 
+            TcpListener listener = new TcpListener(MyAddresses[0], defaultPort);
+            listener.Start();
+            using (TcpClient c = listener.AcceptTcpClient())
+            using (NetworkStream n = c.GetStream())
+            {
+                Packet<byte> received = new Packet<byte>();
+                byte[] data = new BinaryReader(n).ReadBytes(512);
+                received.Deserialize(data);
+                Console.WriteLine(p.ToString());
+            }
+        }
 
         public IPAddress[] GetHostNameAndIP()
         {

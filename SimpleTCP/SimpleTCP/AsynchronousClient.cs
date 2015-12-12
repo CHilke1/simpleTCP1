@@ -170,6 +170,7 @@ namespace SimpleTCP
             // Begin sending the data to the remote device.
             client.BeginSend(byteData, 0, byteData.Length, 0,
                 new AsyncCallback(SendCallback), client);
+            Console.WriteLine("Package sent");
         }
 
         private static void SendCallback(IAsyncResult ar)

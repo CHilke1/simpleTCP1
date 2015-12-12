@@ -42,17 +42,16 @@
   <ItemGroup>
     <Compile Include="AsynchronousClient.cs" />
     <Compile Include="Checksum.cs" />
+    <Compile Include="TCPClient.cs" />
     <Compile Include="Icmpv6EchoRequest.cs" />
     <Compile Include="Ipv4Header.cs" />
     <Compile Include="Ipv6FragmentHeader.cs" />
     <Compile Include="Ipv6Header.cs" />
-    <Compile Include="Packet2.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="ProtocolHeader.cs" />
     <Compile Include="RawSocketClient.cs" />
     <Compile Include="Server.cs" />
     <Compile Include="SockaddrConvert.cs" />
-    <Compile Include="TCP4Header.cs" />
     <Compile Include="TCPPacket.cs" />
     <Compile Include="TCPDemo.cs" />
     <Compile Include="Packet.cs" />

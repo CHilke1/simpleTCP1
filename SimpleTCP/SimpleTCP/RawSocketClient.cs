@@ -46,8 +46,8 @@ namespace SimpleTCP
             byte[] builtPacket, payLoad = Packet;
             UdpHeader udpPacket = new UdpHeader();
             ArrayList headerList = new ArrayList();
-            Socket rawSocket = null;
-            SocketOptionLevel socketLevel = SocketOptionLevel.IP;
+
+            SocketOptionLevel socketLevel = SocketOptionLevel.Udp;
             // Initialize the payload
             Console.WriteLine("Initialize the payload...");
             for (int i = 0; i < payLoad.Length; i++)
@@ -110,18 +110,24 @@ namespace SimpleTCP
             // Convert the header classes into the binary on-the-wire representation
             Console.WriteLine("Converting the header classes into the binary...");
             builtPacket = udpPacket.BuildPacket(headerList, payLoad);
-            Console.Read();
             // Create the raw socket for this packet
             Console.WriteLine("Creating the raw socket using Socket()...");
             //permissions issue.
-            //Socket rawSocket = new Socket(AddressFamily.InterNetwork, SocketType.Raw, ProtocolType.Icmp);
-            rawSocket = new Socket(sourceAddress.AddressFamily, SocketType.Raw, ProtocolType.Udp);
+            Socket rawSocket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
             // Bind the socket to the interface specified
             Console.WriteLine("Binding the socket to the specified interface using Bind()...");
             rawSocket.Bind(new IPEndPoint(bindAddress, 0));
             // Set the HeaderIncluded option since we include the IP header
             Console.WriteLine("Setting the HeaderIncluded option for IP header...");
-            rawSocket.SetSocketOption(socketLevel, SocketOptionName.HeaderIncluded, 1);
+            try
+            {
+                rawSocket.SetSocketOption(socketLevel, SocketOptionName.HeaderIncluded, true);
+
+            }
+            catch
+            {
+
+            }
             try
             {
                 // Send the packet!
